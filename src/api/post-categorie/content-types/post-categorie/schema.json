@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts_categories",
+  "info": {
+    "singularName": "post-categorie",
+    "pluralName": "posts-categories",
+    "displayName": "Catégories d'articles",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    },
+    "detail": {
+      "type": "text"
+    },
+    "detail_en": {
+      "type": "text"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article.article",
+      "mappedBy": "categories_d_articles"
+    }
+  }
+}

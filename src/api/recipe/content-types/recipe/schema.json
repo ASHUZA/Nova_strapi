@@ -1,0 +1,135 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipes",
+  "info": {
+    "singularName": "recipe",
+    "pluralName": "recipes",
+    "displayName": "recettes",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "title_en": {
+      "type": "text"
+    },
+    "is_premuim": {
+      "type": "boolean",
+      "required": false
+    },
+    "health_description": {
+      "type": "richtext"
+    },
+    "price": {
+      "type": "float"
+    },
+    "duration": {
+      "type": "time"
+    },
+    "images": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "images2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "images3": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "chief": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chief.chief",
+      "inversedBy": "recettes"
+    },
+    "cook_instructions": {
+      "type": "richtext"
+    },
+    "cook_instructions_en": {
+      "type": "richtext"
+    },
+    "indredients": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::indredient.indredient",
+      "inversedBy": "recipes"
+    },
+    "recipes_comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recipes-comment.recipes-comment",
+      "mappedBy": "recipe"
+    },
+    "favorites": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::favorite.favorite",
+      "mappedBy": "recipe"
+    },
+    "people": {
+      "type": "string"
+    },
+    "people_en": {
+      "type": "string"
+    },
+    "ingredients_detail": {
+      "type": "richtext"
+    },
+    "ingredients_detail_en": {
+      "type": "richtext"
+    },
+    "health_description_en": {
+      "type": "richtext"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "subtitle_en": {
+      "type": "richtext"
+    },
+    "subtitle": {
+      "type": "richtext"
+    },
+    "video_trailler_en": {
+      "type": "text"
+    },
+    "video_trailler": {
+      "type": "text"
+    },
+    "video_full_en": {
+      "type": "text"
+    },
+    "video_full": {
+      "type": "text"
+    }
+  }
+}

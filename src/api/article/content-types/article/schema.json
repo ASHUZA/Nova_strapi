@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Articles",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "title_en": {
+      "type": "text"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "content_en": {
+      "type": "richtext"
+    },
+    "cover_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "cover_image2": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "publication_date": {
+      "type": "date"
+    },
+    "author": {
+      "type": "text"
+    },
+    "posts_comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post-comment.post-comment",
+      "mappedBy": "article"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "categories_d_articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post-categorie.post-categorie",
+      "inversedBy": "articles"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "indredients",
+  "info": {
+    "singularName": "indredient",
+    "pluralName": "indredients",
+    "displayName": "ingredients",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "name_en": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "comment": {
+      "type": "richtext"
+    },
+    "comment_en": {
+      "type": "richtext"
+    },
+    "recipes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::recipe.recipe",
+      "mappedBy": "indredients"
+    }
+  }
+}

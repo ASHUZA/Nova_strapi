@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts_comments",
+  "info": {
+    "singularName": "post-comment",
+    "pluralName": "posts-comments",
+    "displayName": "Commentaires d'articles",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "article": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::article.article",
+      "inversedBy": "posts_comments"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "language": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "firtname": {
+      "type": "string"
+    },
+    "mail": {
+      "type": "email"
+    }
+  }
+}

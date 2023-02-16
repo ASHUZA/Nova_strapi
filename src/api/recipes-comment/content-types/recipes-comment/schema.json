@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipes_comments",
+  "info": {
+    "singularName": "recipes-comment",
+    "pluralName": "recipes-comments",
+    "displayName": "Commentaires de recettes",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "comment": {
+      "type": "text"
+    },
+    "language": {
+      "type": "string"
+    },
+    "recipe": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::recipe.recipe",
+      "inversedBy": "recipes_comments"
+    }
+  }
+}
