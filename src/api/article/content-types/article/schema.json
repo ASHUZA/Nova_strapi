@@ -68,6 +68,12 @@
       "relation": "manyToMany",
       "target": "api::post-categorie.post-categorie",
       "inversedBy": "articles"
+    },
+    "about": {
+      "type": "richtext"
+    },
+    "about_en": {
+      "type": "richtext"
     }
   }
 }
